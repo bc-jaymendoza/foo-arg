@@ -4,9 +4,14 @@
     <td><img src="<%= hit["image"] %>" /></td>
     <td>
       <h1><%= hit["name"] %></h1>
-      <%= hit["meta_description"] %>
-      <%= hit["rating"] %>
+      <h3><a href="<%= hit["url"] %>"><%= hit["url"] %></a></h3>
+      <strong>Description:</strong> <%= hit["meta_description"] %><br />
+      <strong>Rating</strong>: <%= hit["rating"] %>
     </td>
   </tr>
 <% end %>
 
+<style>
+  * { font-family: Arial }
+  table { width: 1000px; margin: 0 auto; border-spacing: 10px; border-collapse: separate; }
+</style>
