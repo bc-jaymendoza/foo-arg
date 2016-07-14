@@ -23,12 +23,12 @@ main {
 #left-column {
   animation: fadein 8s;
   float: left;
-  width: 12%;
-  padding:28px;
+  width: 13%;
+  padding-left:2%;
 }
 #right-column {
   animation: fadein 5s;
-  width: 70%;
+  width: 68%;
   float:right;
   margin-right:7%;
 }
