@@ -20,6 +20,7 @@ PLATFORMS
 
 DEPENDENCIES
   algoliasearch
+  json
   sinatra
 
 BUNDLED WITH

@@ -1,9 +1,11 @@
+<%#<%= count %> hits <br />%>
+
 <table>
 <% hits.each do |hit| %>
   <tr>
     <td><img src="<%= hit["image"] %>" /></td>
     <td>
-      <h1><%= hit["name"] %></h1>
+      <h1><%= hit["domain"] %></h1>
       <h3><a href="<%= hit["url"] %>"><%= hit["url"] %></a></h3>
       <strong>Description:</strong> <%= hit["meta_description"] %><br />
       <strong>Rating</strong>: <%= hit["rating"] %>
