@@ -1,10 +1,57 @@
-<form method="post" action="/search">
-  <input type="text" id="query" name="query" />
-  <button type="submit">Search</button>
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-  form { width: 202px; margin: 0 auto; position: relative; top: 100px }
-  input { width: 150px; float: left }
-  button { top: 10px; display: block }
-</style>
+    <link href="/css/styles.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+  </head>
+
+<body>
+  <!-- INTERFACE -->
+  <header>
+    <a href="."><img src="//cdn6.bigcommerce.com/s-r8lu9/product_images/uploaded_images/bigcommerce-logomark-whitebg.png?t=1468372433"/></a>
+    <div id="search-input"></div>
+    <div id="search-input-icon"></div>
+  </header>
+
+  <main>
+      <div id="left-column">
+          <div id="industry"></div>
+          <div id="plan"></div>
+          </div>
+    <div id="right-column">
+      <div id="stats"></div>
+      <div id="hits"></div>
+      <div id="pagination"></div>
+    </div>
+  </main>
+  <!-- /INTERFACE -->
+
+  <!-- TEMPLATES -->
+  <script type="text/html" id="hit-template">
+    <div class="hit">
+      <div class="hit-content">
+        <h2 class="hit-name"><a target="_blank" href='//{{{_highlightResult.domain.value}}}'>{{{_highlightResult.domain.value}}}</a></h2>
+        <p class="hit-description">{{{_highlightResult.metadesc.value}}}</p><div id="objectid-hidden">{{{objectID}}}</div>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/html" id="no-results-template">
+    <div id="no-results-message">
+      <p>We didn't find any results for the search <em>"{{query}}"</em>.</p>
+      <a href="." class='clear-all'>Clear search</a>
+    </div>
+  </script>
+  <!-- /TEMPLATES -->
+
+  <!-- SCRIPTS -->
+  <script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+  <script src="/js/app.js"></script>
+  <!-- /SCRIPTS -->
+</body>
+</html>
