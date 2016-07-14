@@ -1,0 +1,2 @@
+require "./screenshot_getter"
+require "resque/tasks"
