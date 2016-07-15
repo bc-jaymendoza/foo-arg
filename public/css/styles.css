@@ -531,5 +531,7 @@ span.count {
   float:left;
   margin-top:-5%;
   margin-left: 2%;
-  } 
+  }
+main {
+  min-width:1280px;
 }
