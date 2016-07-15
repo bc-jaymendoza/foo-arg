@@ -113,6 +113,13 @@ header img {
   padding: 8px 0;
   border-bottom: 1px solid #eee;
 }
+.hit-name {
+  display:inline-block;
+  margin-bottom:0px;
+  position:relative;
+  left:50px;
+  font-size: 18px;
+}
 .media-object {
   display: inline-block;
   width: 100%;
@@ -147,6 +154,10 @@ header img {
 }
 .hit-content .hit-description {
   color: #999;
+  display:inline-block;
+  width:300px;
+  float:right;
+  margin-top:0px;
 }
 
 /* PAGINATION */
@@ -503,5 +514,22 @@ a.downvote:hover{
 }
 
 span.count {
-    margin-left:4.5%;
+    margin-left:35.5%;
     }​
+.upvotesuperuser {
+    display: inline-block;
+    height: 60px;
+    float: left;
+    margin-top: -6%;
+}
+#tags {
+  float:right;
+}
+#rating {
+  width:42px;
+  display:inline-block;
+  float:left;
+  margin-top:-5%;
+  margin-left: 2%;
+  } 
+}

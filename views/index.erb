@@ -3,7 +3,6 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link href="/css/styles.css" type="text/css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
@@ -15,7 +14,6 @@
     <div id="search-input"></div>
     <div id="search-input-icon"></div>
   </header>
-
   <main>
       <div id="left-column">
           <div id="industry"></div>
@@ -29,30 +27,25 @@
     </div>
   </main>
   <!-- /INTERFACE -->
-
   <!-- TEMPLATES -->
   <script type="text/html" id="hit-template">
     <div class="hit">
       <div class="hit-content">
        <div class="media-object" style="background-image: url('{{image}}');"></div>
        <h2 class="hit-name"><a target="_blank" href='//{{{domain}}}'>{{{_highlightResult.domain.value}}}</a></h2>
-         
-          <div id="tags">
+          <p class="hit-description">{{{_highlightResult.metadesc.value}}}</p><div id="objectid-hidden">{{{objectID}}}
+      </div>
+      <div id="tags">
         <ul class="tagslist"><li class="tag-items">{{tags}}</li></ul>
         <button id="{{{objectID}}}" type="button" class="add-tag">Add Tag</button>
         </div>
-        
-          <p class="hit-description">{{{_highlightResult.metadesc.value}}}</p><div id="objectid-hidden">{{{objectID}}}
-      </div>
       <div id="rating" class="upvote-superuser">
         <a id="{{{objectID}}}" class="upvote"></a>
         <span id="{{{objectID}}}" class="count">{{{votes}}}</span>
         <a id="{{{objectID}}}" class="downvote"></a>
       </div>
     </div>
-
   </script>
-
   <script type="text/html" id="no-results-template">
     <div id="no-results-message">
       <p>We didn't find any results for the search <em>"{{query}}"</em>.</p>
@@ -60,20 +53,16 @@
     </div>
   </script>
   <!-- /TEMPLATES -->
-
   <!-- SCRIPTS -->
   <script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
   <script src="/js/app.js"></script>
   <!-- /SCRIPTS -->
-
   <script>
-
   $(document).ready(function() {
     $(document).on('click','.add-tag', function() {
       $foo = $(this)
       alert( $foo.attr('id'));
     });
-
     $(document).on('click','.upvote', function() {
       id = $(this).attr('id');
       $.post( "/upvote", { "id": id });
