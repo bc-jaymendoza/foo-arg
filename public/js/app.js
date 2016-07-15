@@ -1,8 +1,8 @@
 /* global instantsearch */
 
 app({
-  appId: 'Y8Q3VSESJ3',
-  apiKey: '2413f402b681457b0e0d659573e64bb7',
+  appId: 'FP9WZYG9KK',
+  apiKey: '987bdd9558561da935683e87c907137a',
   indexName: 'index_BC'
 });
 
