@@ -88,4 +88,3 @@ function getTemplate(templateName) {
 function getHeader(title) {
   return '<h5>' + title + '</h5>';
 }
-​
