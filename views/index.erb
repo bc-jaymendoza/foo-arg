@@ -35,10 +35,9 @@
   <script type="text/html" id="hit-template">
     <div class="hit">
       <div class="hit-content">
-        <h2 class="hit-name"><a target="_blank" href='//{{{_highlightResult.domain.value}}}'>{{{_highlightResult.domain.value}}}</a></h2><div id="addtags"><button id="addtagbtn" type="button">Add Tag</button></div>
+        <h2 class="hit-name"><a target="_blank" href='//{{{_highlightResult.domain.value}}}'>{{{_highlightResult.domain.value}}}</a></h2><div id="addtags"><button id="{{{objectID}}}" type="button" class="add-tag">Add Tag</button></div>
         <p class="hit-description">{{{_highlightResult.metadesc.value}}}</p><div id="objectid-hidden">{{{objectID}}}</div>
       </div>
-        
     </div>
   </script>
 
@@ -52,28 +51,21 @@
 
   <!-- SCRIPTS -->
   <script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
-  <script src="%%ASSET_js/app.js%%"></script>
+  <script src="/js/app.js"></script>
   <!-- /SCRIPTS -->
+
+  <script>
+
+  $(document).ready(function() {
+      $(document).on('click','.add-tag',function(){
+      $foo = $(this)
+       alert( $foo.attr('id'));
+      });
+  });
+  </script>
+
+
+
+
 </body>
 </html>
-<script>
-$(document).ready(function() {
-$.post = ({
-  async: true,
-  crossDomain: true,
-  url: "https://y8q3vsesj3-dsn.algolia.net/1/indexes/index_BC/78901992/partial",
-  method: "POST",
-  error: function(req, err){ console.log('my message' + err); },
-  success: function(req){ console.log('my message' + err); },
-  headers: {
-    "x-algolia-application-id": "Y8Q3VSESJ3",
-    "x-algolia-api-key": "2b9e09d99f2c106b00faed00c2664917",
-    "cache-control": "no-cache",
-  },
-  data:{"tags": "nikita-testing"}
-})
-});
-
-</script>
-
-​
