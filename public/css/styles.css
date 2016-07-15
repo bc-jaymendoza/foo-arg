@@ -117,7 +117,7 @@ header img {
   display: inline-block;
   width: 100%;
   height:280px;
-  background-size:cover;
+  background-size: contain;
 }
 .hit-image img {
   max-width: 100%;
@@ -475,7 +475,7 @@ div.upvote-superuser a.downvote {
 
 a.upvote {
     height:26px;
-    width:35px;
+    width:42px;
     display:block;
     background-position-y:-260px;
 }
@@ -488,7 +488,7 @@ a.upvote:hover {
 
 a.downvote{
     height:26px;
-    width:35px;
+    width:42px;
     display:block;
     background-position-y: -299px;
     margin-top:-6px;
@@ -496,7 +496,7 @@ a.downvote{
 
 a.downvote:hover{
     height: 26px;
-    width: 41px;
+    width: 42px;
     display: block;
     background-position-y: -326px;
     margin-top: -6px;
