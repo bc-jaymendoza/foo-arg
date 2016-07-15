@@ -6,6 +6,8 @@ app({
   indexName: 'index_BC'
 });
 
+
+
 function app(opts) {
   var search = instantsearch({
     appId: opts.appId,
@@ -28,9 +30,9 @@ function app(opts) {
       templates: {
         item: getTemplate('hit'),
         empty: getTemplate('no-results')
-      }
-    })
-  );
+      } 
+   })
+);
 
   search.addWidget(
   instantsearch.widgets.refinementList({
@@ -40,6 +42,18 @@ function app(opts) {
     limit: 10,
     templates: {
       header: 'Filter by Industry'
+    }
+  })
+);
+
+search.addWidget(
+  instantsearch.widgets.refinementList({
+    container: '#blueprint-theme',
+    attributeName: 'blueprint_template',
+    operator: 'or',
+    limit: 15,
+    templates: {
+      header: 'Filter by Blueprint theme'
     }
   })
 );
@@ -74,3 +88,4 @@ function getTemplate(templateName) {
 function getHeader(title) {
   return '<h5>' + title + '</h5>';
 }
+​
