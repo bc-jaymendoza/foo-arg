@@ -44,12 +44,12 @@
         
           <p class="hit-description">{{{_highlightResult.metadesc.value}}}</p><div id="objectid-hidden">{{{objectID}}}
       </div>
-        <div id="rating" class="upvote-superuser">
-    <a id="{{{objectID}}}" class="upvote"></a>
-    <span id="{{{objectID}}}" class="count">0</span>
-    <a id="{{{objectID}}}" class="downvote"></a>
-</div>    
-          </div>
+      <div id="rating" class="upvote-superuser">
+        <a id="{{{objectID}}}" class="upvote"></a>
+        <span id="{{{objectID}}}" class="count">0</span>
+        <a id="{{{objectID}}}" class="downvote"></a>
+      </div>
+    </div>
   </script>
 
   <script type="text/html" id="no-results-template">
@@ -68,14 +68,20 @@
   <script>
 
   $(document).ready(function() {
-      $(document).on('click','.add-tag',function(){
+    $(document).on('click','.add-tag', function() {
       $foo = $(this)
-       alert( $foo.attr('id'));
-      });
+      alert( $foo.attr('id'));
+    });
+
+    $(document).on('click','.upvote', function() {
+      id = $(this).attr('id');
+      $.post( "/upvote", { "id": id });
+    });
   });
   </script>
 
 
 
+
 </body>
-</html>​
+</html>

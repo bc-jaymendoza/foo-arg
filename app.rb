@@ -5,19 +5,28 @@ Bundler.require
 module StoreSearch
   class App < Sinatra::Application
     APP_ID = 'FP9WZYG9KK'
-    SEARCH_API_KEY = '987bdd9558561da935683e87c907137a'
-
-    Algolia.init :application_id => APP_ID, :api_key => SEARCH_API_KEY
+    ADMIN_KEY = '6f8534882bd2383dc21b40b1458091df'
+    
+    before do
+      Algolia.init :application_id => APP_ID, :api_key => ADMIN_KEY
+      @index = Algolia::Index.new('index_BC')
+    end
 
     get '/' do
       erb :index
     end
 
-    post '/search' do
-      index = Algolia::Index.new('bc_stores')
-      results = index.search(params[:query])
-      hits = results["hits"]
-      erb :results, :locals => {:hits => hits}
+    post '/tags' do
+      puts params
+      content_type :json
+      { :key1 => 'value1', :key2 => 'value2' }.to_json
+    end
+
+    post '/upvote' do
+      @index.partial_update_object(
+        {"votes" => {"value" => 1, "_operation" => "Increment"},
+                                    "objectID" => params[:id]})
+      return ''
     end
   end
 end
