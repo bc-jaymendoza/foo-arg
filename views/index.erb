@@ -78,11 +78,12 @@
       id = $(this).attr('id');
       $.post( "/upvote", { "id": id });
     });
+
+    $(document).on('click','.downvote', function() {
+      id = $(this).attr('id');
+      $.post( "/downvote", { "id": id });
+    });
   });
   </script>
-
-
-
-
 </body>
 </html>

@@ -28,5 +28,12 @@ module StoreSearch
                                     "objectID" => params[:id]})
       return ''
     end
+
+    post '/downvote' do
+      @index.partial_update_object(
+        {"votes" => {"value" => 1, "_operation" => "Decrement"},
+                                    "objectID" => params[:id]})
+      return ''
+    end
   end
 end
