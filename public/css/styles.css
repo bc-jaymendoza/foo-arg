@@ -513,6 +513,9 @@ a.downvote:hover{
     margin-top: -6px;
 }
 
+a { color: #4b71fa; text-decoration: none; }
+a:hover { color: #4b71fc; text-decoration: underline; }
+
 span.count {
     margin-left:35.5%;
     }​
