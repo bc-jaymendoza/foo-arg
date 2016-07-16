@@ -42,7 +42,7 @@
         </div>
       <div id="rating" class="upvote-superuser">
         <a id="{{{objectID}}}" class="upvote"></a>
-        <div id="votecount-{{{objectID}}}" class="count">{{{votes}}}</span>
+        <div id="votecount-{{{objectID}}}" class="count">{{{votes}}}</div>
         <a id="{{{objectID}}}" class="downvote"></a>
       </div>
     </div>
@@ -66,14 +66,14 @@
     });
     $(document).on('click','.upvote', function() {
       id = $(this).attr('id');
-      updatedVoteCount = parseInt($('span#votecount-' + id).text()) + 1;
+      updatedVoteCount = parseInt($('div#votecount-' + id).text()) + 1;
       $.post( "/upvote", { "id": id });
       $('div#votecount-' + id).text(updatedVoteCount);
     });
 
     $(document).on('click','.downvote', function() {
       id = $(this).attr('id');
-      updatedVoteCount = parseInt($('span#votecount-' + id).text()) - 1;
+      updatedVoteCount = parseInt($('div#votecount-' + id).text()) - 1;
       $.post( "/downvote", { "id": id });
       $('div#votecount-' + id).text(updatedVoteCount);
     });
