@@ -117,8 +117,8 @@ header img {
   display:inline-block;
   margin-bottom:0px;
   position:relative;
-  left:50px;
   font-size: 18px;
+  margin-left:17%;
 }
 .media-object {
   display: inline-block;
@@ -400,6 +400,10 @@ footer a:hover {
 }
 
 /*tags*/
+.tag-items {
+  background-color: lightblue;
+  border: 4px lightblue solid;
+}
 
 .tag-items, .tagslist {
     display:inline;
