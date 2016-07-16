@@ -405,7 +405,7 @@ footer a:hover {
     display:inline;
     }
 .add-tag {
-    display:initial;
+    visibility: hidden;
     margin-left:2%;
     }
 .addsometags {
