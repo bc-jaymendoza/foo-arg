@@ -23,7 +23,7 @@ main {
 #left-column {
   animation: fadein 8s;
   float: left;
-  width: 16%;
+  width: 19%;
   padding-left:2%;
 }
 #right-column {

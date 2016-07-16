@@ -39,9 +39,9 @@ function app(opts) {
     container: '#industry',
     attributeName: 'industry',
     operator: 'or',
-    limit: 10,
+    limit: 41,
     templates: {
-      header: 'Filter by Industry'
+      header: 'Industry'
     }
   })
 );
@@ -53,7 +53,7 @@ search.addWidget(
     operator: 'or',
     limit: 10,
     templates: {
-      header: 'Filter by framework'
+      header: 'Framework'
     }
   })
 );
@@ -65,7 +65,7 @@ search.addWidget(
     operator: 'or',
     limit: 15,
     templates: {
-      header: 'Filter by Blueprint theme'
+      header: 'Blueprint Theme'
     }
   })
 );
@@ -77,7 +77,7 @@ search.addWidget(
     operator: 'or',
     limit: 10,
     templates: {
-      header: 'Filter by Plan'
+      header: 'Plan'
     }
   })
 );
