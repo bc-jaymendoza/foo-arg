@@ -564,3 +564,9 @@ main {
   font-size: 17px;
   padding: 5px;
 }
+
+div.count {
+  width: 40px;
+  display: block;
+  text-align: center;
+}
