@@ -48,6 +48,18 @@ function app(opts) {
 
 search.addWidget(
   instantsearch.widgets.refinementList({
+    container: '#themeframework',
+    attributeName: 'themeframework',
+    operator: 'or',
+    limit: 10,
+    templates: {
+      header: 'Filter by framework'
+    }
+  })
+);
+
+search.addWidget(
+  instantsearch.widgets.refinementList({
     container: '#blueprint-theme',
     attributeName: 'blueprint_template',
     operator: 'or',
