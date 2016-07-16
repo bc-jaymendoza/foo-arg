@@ -400,6 +400,10 @@ footer a:hover {
 }
 
 /*tags*/
+.tag-items:empty {
+  visibility:hidden;
+}
+
 .tag-items {
   background-color: lightblue;
   border: 4px lightblue solid;
