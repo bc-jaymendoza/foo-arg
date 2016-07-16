@@ -553,12 +553,14 @@ main {
     display: inline-block;
     position: fixed;
     top: 300px;
-    margin-right:-2.1%;
+    margin-right:-2.3%;
     right:0;
     transform: rotate(270deg);
-    background-color: lightblue;
-    border: 3px solid lightblue;
+    background-color: #4b71fa;
 }
 #feedback > a {
   position:relative;
+  color: white;
+  font-size: 17px;
+  padding: 5px;
 }
