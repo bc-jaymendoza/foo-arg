@@ -525,9 +525,6 @@ a.downvote:hover{
 a { color: #4b71fa; text-decoration: none; }
 a:hover { color: #4b71fc; text-decoration: underline; }
 
-span.count {
-    margin-left:35.5%;
-    }​
 .upvotesuperuser {
     display: inline-block;
     height: 60px;
@@ -575,4 +572,12 @@ div.count {
 }
 .ais-refinement-list--label:hover, .ais-refinement-list--item__active .ais-refinement-list--label, .ais-menu--link:hover, .ais-menu--item__active .ais-menu--link {
   color:#4b71fa;
+}
+
+
+.ais-refinement-list--item:nth-of-type(1),
+.ais-refinement-list--item:nth-of-type(3),
+.ais-refinement-list--item:nth-of-type(25),
+.ais-refinement-list--item:nth-of-type(26) {
+    display: none;
 }
