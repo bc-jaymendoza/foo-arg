@@ -13,7 +13,7 @@ module StoreSearch
     end
 
     get '/foo' do
-      request.env
+      pp request.env
     end
 
     get '/' do
