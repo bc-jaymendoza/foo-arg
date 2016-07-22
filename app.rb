@@ -13,7 +13,7 @@ module StoreSearch
     end
 
     get '/foo' do
-      request.env['REMOTE_ADDR'].split(',').first
+      request.env
     end
 
     get '/' do
