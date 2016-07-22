@@ -19,7 +19,12 @@ module StoreSearch
     end
 
     get '/' do
-      erb :index
+      ips = ['203.1.14.1', '107.23.25.145', '24.173.111.130', '66.55.20.19', '172.87.176.58', '172.87.176.59', '207.141.13.226', '173.200.71.96']
+      if ips.include? request.env['HTTP_X_FORWARDED_FOR']
+        erb :index
+      else
+        'nope.'
+      end
     end
 
     post '/tags' do
