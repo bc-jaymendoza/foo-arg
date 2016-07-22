@@ -14,7 +14,8 @@ module StoreSearch
     end
 
     get '/foo' do
-      pp request.env
+      content_type :json
+      request.env.to_json
     end
 
     get '/' do
