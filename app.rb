@@ -12,6 +12,10 @@ module StoreSearch
       @index = Algolia::Index.new('index_BC')
     end
 
+    get '/foo' do
+      request.env['REMOTE_ADDR'].split(',').first
+    end
+
     get '/' do
       erb :index
     end
