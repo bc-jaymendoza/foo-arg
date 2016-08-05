@@ -23,7 +23,7 @@ module StoreSearch
       if ips.include? request.env['HTTP_X_FORWARDED_FOR']
         erb :index
       else
-        'Please connect via BC network to access.'
+        'Access Denied'
       end
     end
 
