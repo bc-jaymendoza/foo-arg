@@ -28,7 +28,7 @@ main {
 }
 #right-column {
   animation: fadein 5s;
-  width: 68%;
+  width: 67%;
   float:right;
   margin-right:4%;
 }
