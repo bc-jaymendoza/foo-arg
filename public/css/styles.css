@@ -17,9 +17,11 @@ header, main, #no-results, footer {
   margin: 0 auto;
 }
 main {
-  min-height: 360px;
   margin-top:1%;
+  max-width: 1560px;
+  min-height: 360px;
 }
+
 #left-column {
   animation: fadein 8s;
   float: left;
@@ -55,9 +57,8 @@ header {
 }
 header img {
   animation: fadein 10s;
-  position: relative;
   float: left;
-  max-width: 8%;
+  max-width: 9%;
 }
 #search-input input {
   display:block;
@@ -115,10 +116,10 @@ header img {
 }
 .hit-name {
   display:inline-block;
-  margin-bottom:0px;
+  margin-bottom:0;
   position:relative;
   font-size: 18px;
-  margin-left:17%;
+  margin-left:12%;
 }
 .media-object {
   display: inline-block;
@@ -126,6 +127,11 @@ header img {
   height:280px;
   background-size: contain;
   background-repeat: no-repeat;
+  border:7px #eee solid;
+}
+.media-object:hover {
+  border-color: #4b71fc;
+  transition: border-color .3s ease-in;
 }
 .hit-image img {
   max-width: 100%;
@@ -156,7 +162,7 @@ header img {
 .hit-content .hit-description {
   color: #999;
   display:inline-block;
-  width:300px;
+  width:380px;
   float:right;
   margin-top:0px;
 }
@@ -541,10 +547,7 @@ a:hover { color: #4b71fc; text-decoration: underline; }
   margin-top:-5%;
   margin-left: 2%;
   }
-main {
-  max-width:1280px;
-  min-width: 1279px;
-}
+
 
 #feedback {
     display: inline-block;
