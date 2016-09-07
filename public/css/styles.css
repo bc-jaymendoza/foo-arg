@@ -119,7 +119,7 @@ header img {
   margin-bottom:0;
   position:relative;
   font-size: 18px;
-  margin-left:12%;
+  left:12%;
 }
 .media-object {
   display: inline-block;
@@ -294,10 +294,11 @@ header img {
 .ais-refinement-list--label,
 .ais-menu--link {
   font-size: 13px;
-  line-height: 1.2;
+  line-height: 1.6;
   text-decoration: none;
   color: #000;
   cursor: pointer;
+  vertical-align:top;
 }
 .ais-refinement-list--label:hover, .ais-refinement-list--item__active .ais-refinement-list--label,
 .ais-menu--link:hover, .ais-menu--item__active .ais-menu--link {
@@ -407,6 +408,10 @@ footer a:hover {
 }
 
 /*tags*/
+#tags {
+  float:right;
+}
+
 .tag-items:empty {
   visibility:hidden;
 }
@@ -420,7 +425,7 @@ footer a:hover {
     display:inline;
     }
 .add-tag {
-    visibility: hidden;
+    display:none; /* remove to show add tag button */
     margin-left:2%;
     }
 .addsometags {
@@ -537,15 +542,14 @@ a:hover { color: #4b71fc; text-decoration: underline; }
     float: left;
     margin-top: -6%;
 }
-#tags {
-  float:right;
-}
+
 #rating {
   width:42px;
   display:inline-block;
   float:left;
-  margin-top:-5%;
   margin-left: 2%;
+  position:relative;
+  top:-20px;
   }
 
 
