@@ -30,7 +30,7 @@ main {
 }
 #right-column {
   animation: fadein 5s;
-  width: 67%;
+  width: 64%;
   float:right;
   margin-right:4%;
 }
