@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/css/styles.css" type="text/css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
   </head>
 <body>
   <!-- INTERFACE -->
@@ -58,27 +57,52 @@
   <script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
   <script src="/js/app.js"></script>
   <!-- /SCRIPTS -->
-  <script>
-  $(document).ready(function() {
-    $(document).on('click','.add-tag', function() {
-      $foo = $(this)
-      alert( $foo.attr('id'));
-    });
-    $(document).on('click','.upvote', function() {
-      id = $(this).attr('id');
-      updatedVoteCount = parseInt($('div#votecount-' + id).text()) + 1;
-      $.post( "/upvote", { "id": id });
-      $('div#votecount-' + id).text(updatedVoteCount);
-    });
 
-    $(document).on('click','.downvote', function() {
-      id = $(this).attr('id');
-      updatedVoteCount = parseInt($('div#votecount-' + id).text()) - 1;
-      $.post( "/downvote", { "id": id });
-      $('div#votecount-' + id).text(updatedVoteCount);
-    });
-  });
+
+
+  <script>
+ $(document).ready(function() {
+
+     var client = algoliasearch('FP9WZYG9KK', '6f8534882bd2383dc21b40b1458091df', {
+         protocol: 'https:'
+     });
+     var index = client.initIndex('index_BC');
+
+     $(document).on('click', '.upvote', function() {
+         id = $(this).attr('id');
+         updatedVoteCount = parseInt($('div#votecount-' + id).text()) + 1;
+
+         index.partialUpdateObject({
+             votes: {
+                 value: 1,
+                 _operation: 'Increment'
+             },
+             objectID: id
+         }, function(err, content) {
+             console.log(content);
+         });
+
+         $('div#votecount-' + id).text(updatedVoteCount);
+     });
+
+     $(document).on('click', '.downvote', function() {
+         id = $(this).attr('id');
+         updatedVoteCount = parseInt($('div#votecount-' + id).text()) - 1;
+         index.partialUpdateObject({
+             votes: {
+                 value: 1,
+                 _operation: 'Decrement'
+             },
+             objectID: id
+         }, function(err, content) {
+             console.log(content);
+         });
+
+         $('div#votecount-' + id).text(updatedVoteCount);
+     });
+ });
   </script>
+
 </body>
 <div id="feedback"><a target="_blank" href="//docs.google.com/a/bigcommerce.com/forms/d/e/1FAIpQLSe5XhhRwuQA7Fep666n7Dew8chpldB9ATugnGrMJBdY5Mc6dw/viewform">Feedback</a></div>
 </html>
