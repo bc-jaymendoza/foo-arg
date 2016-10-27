@@ -10,12 +10,6 @@
   </head>
 <body>
 
-<div id="example1"></div>
-            
-<script>
-new Taggle('example1');
-</script>
-
   <!-- INTERFACE -->
   <header>
     <a href="."><img src="//cdn6.bigcommerce.com/s-r8lu9/product_images/uploaded_images/bigcommerce-logomark-whitebg.png?t=1468372433"/></a>
@@ -129,8 +123,6 @@ new Taggle('example1');
         splittags = currenttags.split(",");
         new Taggle('tagslist'+ tagid, {
           tags: splittags,
-          placeholder: 'Enter new tags here',
-
           onBeforeTagRemove: function(event, tag) {
         return confirm('You really wanna remove ' + tag + '?');
     },
