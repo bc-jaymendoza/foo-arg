@@ -5,6 +5,7 @@
     <link href="/css/styles.css" type="text/css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="http://www.buttstore.net/content/Taggle.js"></script>
   </head>
 <body>
   <!-- INTERFACE -->
@@ -36,7 +37,8 @@
           <p class="hit-description">{{{_highlightResult.metadesc.value}}}</p><div id="objectid-hidden">{{{objectID}}}
       </div>
       <div id="tags">
-        <ul class="tagslist"><li class="tag-items">{{tags}}</li></ul>
+      <div id="current-tags{{{objectID}}}" >{{{tags}}}</div>
+        <div id="tagslist{{{objectID}}}" class="tags-hidden"></div>
         <button id="{{{objectID}}}" type="button" class="add-tag">Add Tag</button>
         </div>
       <div id="rating" class="upvote-superuser">
@@ -57,8 +59,6 @@
   <script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
   <script src="/js/app.js"></script>
   <!-- /SCRIPTS -->
-
-
 
   <script>
  $(document).ready(function() {
@@ -102,7 +102,60 @@
      });
  });
   </script>
+  <script>
+  $('document').ready(function() {
 
+  var client = algoliasearch('FP9WZYG9KK', '6f8534882bd2383dc21b40b1458091df', {
+         protocol: 'https:'
+     });
+     var index = client.initIndex('index_BC');
+
+    $(document).on('click', '.add-tag', function() {
+         tagid = $(this).attr('id');
+         $('#tagslist' + tagid).toggleClass('tags-visible');
+         $('#tagslist' + tagid).toggleClass('tags-hidden');
+         if($('#tagslist' + tagid + ' ' +'.taggle_list').length > 0) {
+          console.log('no taggle created')
+       } else {
+        currenttags = $('#current-tags' + tagid).text();
+        splittags = currenttags.split(",");
+        new Taggle('tagslist'+ tagid, {
+          tags: splittags,
+          placeholder: 'Enter new tags here',
+
+          onBeforeTagRemove: function(event, tag) {
+        return confirm('You really wanna remove ' + tag + '?');
+    },
+
+          onTagRemove: function(event, tag) {
+            index.partialUpdateObject({
+              tags: {
+              value: tag,
+              _operation: 'Remove'
+              },
+              objectID: tagid
+        }, function(err, content) {
+  console.log(content);
+});
+          },
+          onTagAdd: function(event, tag) {
+            index.partialUpdateObject({
+              tags: {
+              value: tag,
+              _operation: 'Add'
+              },
+          objectID: tagid
+        }, function(err, content) {
+  console.log(content);
+});
+
+    }
+        });
+         $(".taggle_input").parent().css( "width", "19%" );
+       };
+  });
+  }); 
+  </script>
 </body>
 <div id="feedback"><a target="_blank" href="//docs.google.com/a/bigcommerce.com/forms/d/e/1FAIpQLSe5XhhRwuQA7Fep666n7Dew8chpldB9ATugnGrMJBdY5Mc6dw/viewform">Feedback</a></div>
 </html>

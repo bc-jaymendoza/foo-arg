@@ -23,7 +23,7 @@ module StoreSearch
       if ips.include? request.env['HTTP_X_FORWARDED_FOR']
         erb :index
       else
-        ''
+        erb :index
       end
     end
 
