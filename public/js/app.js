@@ -82,6 +82,17 @@ search.addWidget(
   })
 );
 
+search.addWidget(
+  instantsearch.widgets.refinementList({
+    container: '#tags-facet',
+    attributeName: 'tags',
+    operator: 'or',
+    limit: 50,
+    templates: {
+      header: 'Tags'
+    }
+  })
+);
   search.addWidget(
     instantsearch.widgets.pagination({
       container: '#pagination',
