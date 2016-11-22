@@ -454,22 +454,25 @@ footer a:hover {
     }
 
 .add-tag {
-    width:65px;
-    height:30px;
+    width: 56px;
+    height: 29px;
     float: right;
-    margin-top:2%;
-    border-radius:3px;
-    background-color: #EEE;
-    border-style: solid;
-    font-size: larger;
-    font-weight: 400;
-    color: #4b71fa;
     display: inline-block;
-    font-size:17px;
-    }
+    text-transform: uppercase;
+    letter-spacing: .05556rem;
+    background-color: #4b71fc;
+    border-color: #4b71fc;
+    color: #fff;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3rem;
+    margin: 0 0 1rem;
+}
 
 .add-tag:hover {
-  border-color: #4b71fc;
+    background-color: #3f5cd6;
+    border-color: #3f5cd6;
+    color: #fff;
 }
 .addsometags {
     display:inline;
@@ -500,19 +503,23 @@ footer a:hover {
   float: left;
   display: inline-block;
   white-space: nowrap;
-  font-weight: 500;
-  margin-bottom: 5px; }
+  font-weight: 200;
+  margin-bottom: 5px; 
+  font-size:0.74rem;
+  line-height: 1.4;
+}
 
 .taggle_list .taggle {
-  margin-right: 8px;
-  background: #E2E1DF;
-  padding: 5px 10px;
-  border-radius: 3px;
-  position: relative;
-  cursor: pointer;
-  transition: all .3s;
-  animation-duration: 1s;
-  animation-fill-mode: both; }
+    margin-right: 8px;
+    background-color: #4b71fc;
+    padding: 5px 9px;
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+    transition: all .3s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    color: white; }
 
 .taggle_list .taggle_hot {
   background: #cac8c4; }
@@ -536,7 +543,7 @@ footer a:hover {
 
 .taggle_list .taggle:hover {
   padding: 5px;
-  padding-right: 15px;
+  padding-right: 17px;
   background: #ccc;
   transition: all .3s; }
 
